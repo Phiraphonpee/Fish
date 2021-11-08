@@ -22,10 +22,10 @@ class Fish {
     acc.x += force.x / mass;
     acc.y += force.y / mass;
   }
-  void update() {
+  void update(Vector posttomove) {
     //velo.add(acc); 
     
-    if (dot != null ) {
+    /*if (dot != null ) {
       float mx = (tar.x - pos.x) * 0.05;
       float my = (tar.y - pos.y) * 0.05;
       velo = new Vector( mx,my);
@@ -37,11 +37,25 @@ class Fish {
         
         diameter = ddd + level*10;
         surface.setTitle("Fish Game Level:" + level);
-      }
+      }*/
+      
+      pos = posttomove;
+      if (pos.x != ox || pos.y != oy) {
+      /*
+      fill(64);
+      circle(ox,oy,diameter+1);
+      */
+      fill(255);
+      circle(pos.x,pos.y,diameter);
+      velo.x = pos.x - ox;
+      velo.y = pos.y - oy;
+      ox = pos.x;
+      oy = pos.y;
+    }
       
     } 
     
-    pos.add(velo);
+    /*pos.add(velo);
     if (pos.x > width-diameter/2) {
       velo.x *= -1; 
       pos.x = width-diameter/2; 
@@ -62,7 +76,7 @@ class Fish {
     setPos(pos);
     acc.x = 0;
     acc.y = 0;
-  }
+  }*/
   float ox,oy;
   void move(Vector posttomove) {
     pos = posttomove;
