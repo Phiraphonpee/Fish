@@ -1,7 +1,6 @@
 Dot dot;
 Fish fish;
 Box2DProcessing box2d;
-
 PImage img;
 
 import shiffman.box2d.*;
@@ -12,6 +11,7 @@ import org.jbox2d.collision.shapes.Shape;
 import org.jbox2d.common.*;
 import org.jbox2d.dynamics.*;
 ArrayList boundaries;
+
 
 void setup() {
   size(800,600);
@@ -29,8 +29,11 @@ void setup() {
   boundaries.add(new Boundary(5,height/2,10,height,0));
   
 }
+
+
 ArrayList<Dot> dots = new ArrayList<Dot>();
 boolean fc = false;
+
 
 void mousePressed() {
   // Check to see if the mouse was clicked on the box
@@ -39,6 +42,7 @@ void mousePressed() {
     spring.bind(mouseX,mouseY,box);
   }
 }
+
 
 void draw() {
   /*if (fc && !mousePressed) {

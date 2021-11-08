@@ -5,6 +5,8 @@ class Fish {
   int level = 1;
   Dot dot;
   Vector velo,pos,acc,tar;
+  
+  
   Fish(Vector p,Vector v,Vector a,float m,float d) {
     mass = m;
     ddd = d;
@@ -14,14 +16,20 @@ class Fish {
     acc = a;
     tar = new Vector(width-300,height-300);
   }
+  
+  
   void setTarget(Dot dot) {
     this.dot = dot;
     tar = dot.pos;
   }
+  
+  
   void addForce(Vector force) {
     acc.x += force.x / mass;
     acc.y += force.y / mass;
   }
+  
+  
   void update(Vector posttomove) {
     //velo.add(acc); 
     
@@ -77,7 +85,11 @@ class Fish {
     acc.x = 0;
     acc.y = 0;
   }*/
+  
+  
   float ox,oy;
+  
+  
   void move(Vector posttomove) {
     pos = posttomove;
       /*
@@ -92,6 +104,8 @@ class Fish {
       oy = pos.y;
     
   }
+  
+  
   void setPos(Vector postoset) {
     pos = postoset;
       /*
